@@ -7,6 +7,9 @@ gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
 gem "puma", "~> 5.0"
 
+# Gem to handle the calendar
+gem 'simple_calendar', '~> 2.4', '>= 2.4.3'
+
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do
