@@ -1,7 +1,29 @@
 <div class="container mt-5 text-center">
     <h1>Rails Calendar</h1>
     <%= link_to 'Novo Evento', new_event_path %>
-    <%= month_calendar(events: @events) do |date| %>
-        <%= date %>
+    <%= month_calendar(events: @events) do |date, events| %>
+        <div class="day">
+            <%= date %>
+        </div>
+        <% events.each do |event| %>
+            <div class="card-header">
+                <div class="dard-title">
+                    <%= link_to event.title, event_path(event) %>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <%= event.description %>
+                    </p>
+                    <div class="card-footer">
+                        <p class="class-text">
+                            From: <%= event.start_time.strftime('%A, %B, d, Y, at %I:%M %p') %>
+                        </p>
+                        <p class="class-text">
+                            To: <%= event.end_time.strftime('%A, %B, d, Y, at %I:%M %p') %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <% end %>
     <% end %>
 </div>
