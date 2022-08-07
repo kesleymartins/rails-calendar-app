@@ -1,5 +1,6 @@
 <div class="container mt-5 text-center">
     <h1>Rails Calendar</h1>
+    <%= link_to 'Novo Evento', new_event_path %>
     <%= month_calendar(events: @events) do |date| %>
         <%= date %>
     <% end %>
