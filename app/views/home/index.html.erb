@@ -1,6 +1,6 @@
 <div class="container mt-5 text-center">
     <h1>Rails Calendar</h1>
-    <%= month_calendar() do |date| %>
-        <%= date.day %>
+    <%= month_calendar(events: @events) do |date| %>
+        <%= date %>
     <% end %>
 </div>
