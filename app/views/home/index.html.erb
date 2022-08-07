@@ -1,6 +1,6 @@
 <div class="container mt-5 text-center">
     <h1>Rails Calendar</h1>
-    <%= link_to 'Novo Evento', new_event_path %>
+    <%= link_to 'Novo Evento', new_event_path, data: { turbo_frame: 'new-event' } %>
     <%= month_calendar(events: @events) do |date, events| %>
         <div class="day">
             <%= date.day %>
@@ -11,4 +11,6 @@
             </div>
         <% end %>
     <% end %>
+
+    <%= turbo_frame_tag 'new-event' %>
 </div>
