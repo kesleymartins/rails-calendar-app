@@ -6,7 +6,9 @@
             <%= date.day %>
         </div>
         <% events.each do |event| %>
-            <%= link_to event.title, event_path(event), class: 'badge bg-primary' %>
+            <div class="badge bg-primary" data-bs-toggle="tooltip" data-bs-title="<%= event.description %>" data-bs-placement="bottom">
+                <%= link_to event.title, event_path(event), class: 'text-light' %>
+            </div>
         <% end %>
     <% end %>
 </div>
