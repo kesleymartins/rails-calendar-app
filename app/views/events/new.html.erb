@@ -1,3 +1,8 @@
-<h1>Criar</h1>
-
-<%= render 'form' %>
+<%= turbo_frame_tag 'new-event' do %>
+  <div class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <%= render 'form' %>
+    </div>
+  </div>
+<% end %>
