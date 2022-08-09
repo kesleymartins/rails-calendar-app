@@ -1,16 +1,18 @@
 <div class="container mt-5 text-center">
     <h1>Rails Calendar</h1>
     <%= link_to 'Novo Evento', new_event_path, data: { turbo_frame: 'new-event' } %>
+
     <%= month_calendar(events: @events) do |date, events| %>
         <div class="day">
             <%= date.day %>
         </div>
         <% events.each do |event| %>
             <div class="badge bg-primary" data-bs-toggle="tooltip" data-bs-title="<%= event.description %>" data-bs-placement="bottom">
-                <%= link_to event.title, event_path(event), class: 'text-light' %>
+                <%= link_to event.title, event_path(event), data: { turbo_frame: 'show-event' }, class: 'text-light' %>
             </div>
         <% end %>
     <% end %>
 
     <%= turbo_frame_tag 'new-event' %>
+    <%= turbo_frame_tag 'show-event' %>
 </div>

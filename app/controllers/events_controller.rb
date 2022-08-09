@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
-    before_action :set_event, only: %i[ edit update ]
+    before_action :set_event, only: %i[ show edit update ]
+
+    def show; end
 
     def new
         @event = Event.new
@@ -28,7 +30,7 @@ class EventsController < ApplicationController
     private
 
     def set_event
-        @event = Event.find(params{:id})
+        @event = Event.find(params[:id])
     end
 
     def event_params
