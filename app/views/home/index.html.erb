@@ -7,9 +7,9 @@
             <%= date.day %>
         </div>
         <% events.each do |event| %>
-            <div class="badge bg-primary" data-bs-toggle="tooltip" data-bs-title="<%= event.description %>" data-bs-placement="bottom">
-                <%= link_to event.title, event_path(event), data: { turbo_frame: 'show-event' }, class: 'text-light' %>
-            </div>
+          <span class="tag is-info is-rounded">
+              <%= link_to event.title, event_path(event), data: { turbo_frame: 'show-event' }, class: 'has-text-white' %>
+          </span>
         <% end %>
     <% end %>
 
