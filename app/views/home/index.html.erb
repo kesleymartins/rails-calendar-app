@@ -2,6 +2,8 @@
     <section class="has-text-centered">
       <h1 class="title is-1">Rails Calendar</h1>
       <%= link_to 'Novo Evento', new_event_path, data: { turbo_frame: 'new-event' }, class: 'button is-primary' %>
+
+      <hr>
     </section>
 
     <%= month_calendar(events: @events) do |date, events| %>
