@@ -6,7 +6,22 @@
         <p class="modal-card-title"><%= @event.title %></p>
       </header>
       <section class="modal-card-body">
-        <%= @event.description %>
+        <section>
+          <p>
+            <%= @event.description %>
+          </p>
+        </section>
+        <hr>
+        <section>
+          <p>
+            <strong>Data de Inicio:</strong>
+            <span><%= @event.start_time.strftime('%d/%m/%Y - %H:%M') %></span>
+          </p>
+          <p>
+            <strong>Date final:</strong>
+            <span><%= @event.end_time.strftime('%d/%m/%Y - %H:%M') %></span>
+          </p>
+        </section>
       </section>
       <footer class="modal-card-foot">
         <%= link_to 'Fechar', root_path, class: 'button' %>
