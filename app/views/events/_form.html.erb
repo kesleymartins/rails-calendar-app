@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" data-controller="flatpickr">
     <%= form_with(model: @event) do |f| %>
         <header class="card-header">
             <p class="card-header-title">Novo Evento</p>
@@ -18,12 +18,12 @@
 
                 <div class="field">
                     <%= f.label :start_time, class: 'label' %>
-                    <%= f.datetime_local_field :start_time, class: 'input' %>
+                    <%= f.datetime_field :start_time, class: 'input datetime-input' %>
                 </div>
 
                 <div class="field">
                     <%= f.label :end_time, class: 'label' %>
-                    <%= f.datetime_local_field :end_time, class: 'input' %>
+                    <%= f.datetime_field :end_time, class: 'input datetime-input' %>
                 </div>
             </div>
 
