@@ -8,12 +8,12 @@ class EventsController < ApplicationController
     end
 
     def create
-        @event = Event.create(event_params)
+        @event = Event.new(event_params)
         
         if @event.save
             redirect_to root_path, notice: 'Evento criado com sucesso!'
         else
-            render :new, status: :unprocessable_entity
+            render(turbo_stream: turbo_stream.replace('events_form', partial: 'events/form', locals: { event: @event }))
         end
     end
 
