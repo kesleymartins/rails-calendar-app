@@ -1,11 +1,18 @@
 <div class="card" data-controller="flatpickr">
-    <%= form_with(model: @event) do |f| %>
+    <%= form_with(model: @event, id: 'events_form', data: { turbo_frame: '_top'}) do |f| %>
+        
         <header class="card-header">
             <p class="card-header-title">Novo Evento</p>
         </header>
 
         <div class="card-content">
             <div class="content">
+                <% if @event.errors.any? %>
+                    <div class="notification is-danger">
+                        <%= @event.errors.first.full_message %>
+                    </div>
+                <% end %>
+
                 <div class="field">
                     <%= f.label :title, class: 'label' %>
                     <%= f.text_field :title, class: 'input' %>
