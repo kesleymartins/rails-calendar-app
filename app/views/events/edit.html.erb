@@ -1,3 +1,15 @@
-<h1>Editar</h1>
-
-<%= render 'form' %>
+<%= turbo_frame_tag 'event-frame' do %>
+  <div class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Editar Evento</p>
+        </header>
+        <section>
+          <%= render 'form' %>
+        </section>
+      </div>
+    </div>
+  </div>
+<% end %>

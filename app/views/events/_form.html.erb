@@ -1,44 +1,36 @@
-<div class="card" data-controller="flatpickr">
-    <%= form_with(model: @event, id: 'events_form', data: { turbo_frame: '_top'}) do |f| %>
-        
-        <header class="card-header">
-            <p class="card-header-title">Novo Evento</p>
-        </header>
-
-        <div class="card-content">
-            <div class="content">
-                <% if @event.errors.any? %>
-                    <div class="notification is-danger">
-                        <%= @event.errors.first.full_message %>
-                    </div>
-                <% end %>
-
-                <div class="field">
-                    <%= f.label :title, class: 'label' %>
-                    <%= f.text_field :title, class: 'input' %>
-                </div>
-
-                <div class="field">
-                    <%= f.label :description, class: 'label' %>
-                    <%= f.text_area :description, class: 'textarea' %>
-                </div>
-
-                <div class="field">
-                    <%= f.label :start_time, class: 'label' %>
-                    <%= f.datetime_field :start_time, class: 'input datetime-input' %>
-                </div>
-
-                <div class="field">
-                    <%= f.label :end_time, class: 'label' %>
-                    <%= f.datetime_field :end_time, class: 'input datetime-input' %>
-                </div>
-            </div>
-
-            <div class="is-flex is-justify-content-flex-end">
-                <%= link_to 'cancelar', root_path, class: 'button is-danger mx-1' %>
-                <%= f.submit 'Adicionar', class: 'button is-primary mx-1' %>
-            </div>
+<div class="card-content" data-controller="flatpickr">
+  <%= form_with(model: @event, id: 'events_form', data: { turbo_frame: '_top'}) do |f| %>
+    <div class="content">
+      <% if @event.errors.any? %>
+        <div class="notification is-danger">
+          <%= @event.errors.first.full_message %>
         </div>
+      <% end %>
 
-    <% end %>
+      <div class="field">
+        <%= f.label :title, class: 'label' %>
+        <%= f.text_field :title, class: 'input' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description, class: 'label' %>
+        <%= f.text_area :description, class: 'textarea' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :start_time, class: 'label' %>
+        <%= f.datetime_field :start_time, class: 'input datetime-input' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :end_time, class: 'label' %>
+        <%= f.datetime_field :end_time, class: 'input datetime-input' %>
+      </div>
+    </div>
+
+    <div class="is-flex is-justify-content-flex-end">
+      <%= link_to 'cancelar', root_path, class: 'button is-danger mx-1' %>
+      <%= f.submit class: 'button is-primary mx-1' %>
+    </div>
+  <% end %>
 </div>

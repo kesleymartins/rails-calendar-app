@@ -1,8 +1,15 @@
-<%= turbo_frame_tag 'new-event' do %>
+<%= turbo_frame_tag 'event-frame' do %>
   <div class="modal is-active">
     <div class="modal-background"></div>
     <div class="modal-content">
-      <%= render 'form' %>
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">Novo Evento</p>
+        </header>
+        <section>
+          <%= render 'form' %>
+        </section>
+      </div>
     </div>
   </div>
 <% end %>
