@@ -23,7 +23,7 @@ class EventsController < ApplicationController
         if @event.update(event_params)
             redirect_to root_path, notice: 'Evento editado com sucesso!'
         else
-            render :edit, status: :unprocessable_entity
+            render(turbo_stream: turbo_stream.replace('events_form', partial: 'events/form', locals: { event: @event }))
         end
     end
 
