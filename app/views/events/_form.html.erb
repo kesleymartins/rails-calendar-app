@@ -1,4 +1,4 @@
-<div class="card-content" data-controller="flatpickr">
+<div class="card-content">
   <%= form_with(model: @event, id: 'events_form', data: { turbo_frame: '_top'}) do |f| %>
     <div class="content">
       <% if @event.errors.any? %>
@@ -19,12 +19,12 @@
 
       <div class="field">
         <%= f.label :start_time, class: 'label' %>
-        <%= f.datetime_field :start_time, class: 'input datetime-input' %>
+        <%= f.datetime_field :start_time, class: 'input', data: { controller: 'flatpickr' } %>
       </div>
 
       <div class="field">
         <%= f.label :end_time, class: 'label' %>
-        <%= f.datetime_field :end_time, class: 'input datetime-input' %>
+        <%= f.datetime_field :end_time, class: 'input datetime-input', data: { controller: 'flatpickr' } %>
       </div>
     </div>
 
