@@ -1,4 +1,4 @@
-<%= turbo_frame_tag 'show-event' do %>
+<%= turbo_frame_tag 'event-frame' do %>
   <div class="modal is-active">
     <div class="modal-background"></div>
     <div class="modal-card">
@@ -25,6 +25,7 @@
       </section>
       <footer class="modal-card-foot">
         <%= link_to 'Fechar', root_path, class: 'button' %>
+        <%= link_to 'Editar', edit_event_path(@event), data: { turbo_frame: 'edit-event' }, class: 'button' %>
       </footer>
     </div>
   </div>

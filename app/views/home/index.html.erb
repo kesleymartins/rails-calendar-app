@@ -1,7 +1,7 @@
 <div class="container is-max-desktop">
     <section class="has-text-centered">
       <h1 class="title is-1">Rails Calendar</h1>
-      <%= link_to 'Novo Evento', new_event_path, data: { turbo_frame: 'new-event' }, class: 'button is-primary' %>
+      <%= link_to 'Novo Evento', new_event_path, data: { turbo_frame: 'event-frame' }, class: 'button is-primary' %>
 
       <hr>
     </section>
@@ -12,11 +12,10 @@
         </div>
         <% events.each do |event| %>
           <span class="tag is-info is-rounded">
-              <%= link_to event.title, event_path(event), data: { turbo_frame: 'show-event' }, class: 'has-text-white' %>
+              <%= link_to event.title, event_path(event), data: { turbo_frame: 'event-frame' }, class: 'has-text-white' %>
           </span>
         <% end %>
     <% end %>
 
-    <%= turbo_frame_tag 'new-event' %>
-    <%= turbo_frame_tag 'show-event' %>
+    <%= turbo_frame_tag 'event-frame' %>
 </div>
