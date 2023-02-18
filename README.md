@@ -1,24 +1,30 @@
-# README
+# Simple Calendar App
+#### Bibliotecas
+- Backend
+  - [simple_calendar](https://github.com/excid3/simple_calendar)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Frontend
+	- [bulma](https://bulma.io)
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+#### Dependências
+---
+- [ruby](https://www.ruby-lang.org) 3.2
+- [sqlite3](https://www.sqlite.org/index.html)
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+#### Configurando o projeto
+---
+```bash
+bundle install
+```
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+#### Executando o projeto
+---
+```bash
+rails s
+```
